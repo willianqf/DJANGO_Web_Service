@@ -1,0 +1,21 @@
+{% extends 'paginas/inin.html' %}
+
+{% load static %}
+
+{% block corpo %}
+<br>
+<h2>Excluir registro</h2>
+
+<form action="" method="POST">
+    <p class="lead">
+        Confirme se deseja excluir este registro
+    </p>
+    <hr>
+    <p> Excluir o registro: <b>{{ object }}?</b></p> <!-- Quando chamna o object ele printa o valor definido no str da classe-->
+    {% csrf_token %} <!-- CRIA METODOS SEGUROS DENTRO DO FORM-->
+
+    {{ form.as_p }} <!-- TRÁS OS CAMPOS QUE PRECISAM SER PREENCHIDO NO BANCO DE DADOS -->
+
+    <button type="submit" class="btn btn-danger">EXCLUIR</button>
+</form>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'paginas/inin.html' %}
+
+{% load static %}
+
+{% block corpo %}
+<br>
+<h2>Cadastrar</h2>
+
+<form action="" method="POST">
+    <p class="lead">
+        Preencha todos os campos obrigatório
+    </p>
+    <hr>
+    {% csrf_token %} <!-- CRIA METODOS SEGUROS DENTRO DO FORM-->
+
+    {{ form.as_p }} <!-- TRÁS OS CAMPOS QUE PRECISAM SER PREENCHIDO NO BANCO DE DADOS -->
+
+    <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
+{% endblock %}
